@@ -17,7 +17,7 @@
 </head>
 <body>
 
-<div class="jumbotron text-center">
+<div ng-controller="FoodController" class="jumbotron text-center">
   <h1>Welcome to Shery's website</h1>
 
   <p><a href='#/foods'>foods</a> photos coding fun</p>
@@ -31,9 +31,9 @@
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
     </div>
     <div class="col-sm-4">
-      <h3>Column 2</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+      <video id="video" width="640" height="480" autoplay></video>
+<button id="snap">Snap Photo</button>
+<canvas id="canvas" width="640" height="480"></canvas>
     </div>
     <div class="col-sm-4">
       <h3>Column 3</h3>
@@ -43,4 +43,36 @@
   </div>
 </div>
  </body>
+var aVideo=document.getElementById('video');
+var aCanvas=document.getElementById('canvas');
+var ctx=aCanvas.getContext('2d');
+
+navigator.getUserMedia = navigator.getUserMedia ||
+navigator.webkitGetUserMedia ||
+navigator.mozGetUserMedia ||
+navigator.msGetUserMedia;
+navigator.getUserMedia({video:true}, gotStream, noStream);
+
+function gotStream(stream) {
+video.src = URL.createObjectURL(stream);
+video.onerror = function () {
+stream.stop();
+};
+stream.onended = noStream;
+video.onloadedmetadata = function () {
+alert('camera start!');
+};
+}
+function noStream(err) {
+alert(err);
+}
+
+
+<h2>按钮模拟拍照</h2>
+
+
+document.getElementById("snap").addEventListener("click", function() {
+
+ctx.drawImage(aVideo, 0, 0, 640, 480);
+});
 </html>
