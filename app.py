@@ -1,8 +1,12 @@
 from flask import Flask, render_template
 
-@application.route('/')
-def showMachineList():
+
+app = Flask(__name__)
+
+
+@app.route('/')
+def main_page():
     return render_template('index.html')
 
 if __name__ == "__main__":
-    application.run(host='0.0.0.0')
+    app.run()
