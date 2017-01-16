@@ -1,12 +1,12 @@
-from flask import Flask, render_template
-
+from flask import Flask, send_file
 
 app = Flask(__name__)
 
 
-@app.route('/')
-def main_page():
-    return render_template('foods.html')
+@app.route("/")
+def index():
+    return send_file("index.html")
+
 
 if __name__ == "__main__":
     app.run()

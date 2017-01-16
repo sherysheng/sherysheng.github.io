@@ -7,6 +7,10 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script src="http://code.angularjs.org/1.5.3/angular-route.min.js"></script>
+    <script  src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-route.js"></script>
+    <script src="\js\main.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
@@ -15,9 +19,9 @@
 
 
 </head>
-<body>
+<body ng-app='myApp' ng-controller="FoodController" >
 
-<div ng-view ng-app='myApp'ng-controller="FoodController" class="jumbotron text-center">
+<div ng-view  class="jumbotron text-center">
   <h1>Welcome to Shery's website</h1>
 
   <p><a href='#/foods'>foods</a> photos coding fun  <a href="http://www.baidu.com">baidu</a> </p>
