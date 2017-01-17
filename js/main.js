@@ -1,14 +1,18 @@
 'use strict';
 var app = angular.module('myApp', ['ngRoute']);
 
-app.config(function($routeProvider) {
+app.config('$routeProvider',function($routeProvider) {
     $routeProvider
-        .when('#/foods', {
-            templateUrl : '/templates/photos.html',
-            controller  : 'FoodController'
+        .when('/foods', {
+            templateUrl : '/templates/foods.html',
+            //controller  : 'FoodController'
         })
+         .otherwise({
+                 redirectTo: '/',
+             });
 });
 
-app.controller("FoodController", function($scope, $routerParams){
-    console.log("welcome to foodie world");
+app.controller("myCtrl", function($scope){
+    $scope.firstName= "John";
+    $scope.lastName= "Doe";
 });
