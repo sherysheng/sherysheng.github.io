@@ -20,21 +20,6 @@
 
 </head>
 <body ng-app="myApp" ng-controller="myCtrl" >
-
-<div ng-view  class="jumbotron text-center">
-    <h1>Welcome to Shery's website</h1>
-    <div ng-app="myApp" ng-controller="myCtrl">
-
-        名: <input type="text" ng-model="firstName"><br>
-        姓: <input type="text" ng-model="lastName"><br>
-        <br>
-        姓名: {{firstName + " " + lastName}}
-
-    </div>
-    <p><a href='/foods'>foods</a> photos coding fun   </p>
-
-</div>
-
 <div class="container">
     <div class="row">
         <div class="col-sm-4">
@@ -44,7 +29,7 @@
         </div>
         <div class="col-sm-4">
             <video id="video" width="640" height="480" autoplay></video>
-            <button id="snap">Snap Photo</button>
+
             <canvas id="canvas" width="640" height="480"></canvas>
         </div>
         <div class="col-sm-4">
